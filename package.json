@@ -1,5 +1,0 @@
-{
-  "standard": {
-    "globals": [ "wx", "getApp", "Page", "App", "Component" ]
-  }
-}
