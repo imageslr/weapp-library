@@ -1,7 +1,7 @@
 ## 在线借书平台
 
 ### 文档
-[点击查看](https://imageslr.library-online.io)
+[点击查看](https://imageslr.library-online.io/weapp-library)
 
 ### UI
 ![ui](./ui.png)
@@ -12,7 +12,7 @@
 ![组件展示](./component.png)
 
 ### 运行
-参考[文档-安装](https://imageslr.library-online.io/guide/install.html)
+参考[文档-安装](https://imageslr.library-online.io/weapp-library/guide/install.html)
 
 注意：请**更新最新版开发工具**，在`project.config.json`中添加下列字段以**忽略无用文件**，否则会报错“代码包过大”。
 
