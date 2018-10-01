@@ -44,13 +44,13 @@
     <view class="weui-cell__bd">借阅历史</view>
     <view class="weui-cell__ft weui-cell__ft_in-access"></view>
   </navigator>
-  <navigator url="./navigate" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+  <!-- <navigator url="./navigate" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
     <view class="weui-cell__hd">
       <image src="/images/icon_deposit.png" class="icon"></image>
     </view>
     <view class="weui-cell__bd">我的押金</view>
     <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-  </navigator>
+  </navigator> -->
   <navigator url="./children/review" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
     <view class="weui-cell__hd">
       <image src="/images/icon_review_2.png" class="icon"></image>
