@@ -82,3 +82,6 @@
 
 ### 代码规范
 遵循 [JavaScript Standard Style](https://standardjs.com/readme-zhcn.html)
+
+### 声明
+Demo 仅作学习使用, 转载请注明出处
