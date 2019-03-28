@@ -3,7 +3,7 @@
 **如果你觉得这个仓库有用，请点一个Star支持一下我，谢谢！**  
 **如果对哪部分代码有疑问或者需要我讲一下设计和开发的整体理念/部分细节，可以开一个Issue。欢迎大家与我交流。**
 
-> 欢迎关注本项目使用 Taro 重构后的版本：[taro-library](https://github.com/imageslr/taro-library)，仅包含三个示例页面，非常简单。面向人群主要是 Taro/React/Redux 的初学者，目的是提供一个简单的实践项目，帮助理解 Taro 与 Redux 的配合方式与 Taro 的基本使用。本项目还提供了一个快速搭建本地 mock 服务的解决方案。
+**欢迎关注本项目使用 Taro 重构后的版本**：[taro-library](https://github.com/imageslr/taro-library)，仅包含三个示例页面，非常简单。面向人群主要是 Taro/React/Redux 的初学者，目的是提供一个简单的实践项目，帮助理解 Taro 与 Redux 的配合方式与 Taro 的基本使用。本项目还提供了一个快速搭建本地 mock 服务的解决方案。
 
 ### 文档
 [点击查看](https://imageslr.github.io/weapp-library)
