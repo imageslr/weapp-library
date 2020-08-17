@@ -10,6 +10,10 @@
 ### Mock 数据
 本项目目前仅提供小程序的开源代码，暂无对应后端服务。Mock 数据来自 [Easy Mock](https://www.easy-mock.com/mock/5aacc9a1d3f6bd35dfb4be65/)，API 文档使用 [Swagger](https://app.swaggerhub.com/apis/imageslr/weapp/1.0.1)。
 
+EasyMock 的证书已经到期，因此需要在开发者工具-详情中勾选“不校验合法域名、web-view（业务域名）、TLS 版本以及 HTTPS 证书”。
+
+EasyMock 现在不太稳定，所以我把 Mock 数据导出了一份，见 [mocks](./mocks) 文件夹。大家可以尝试本地部署 [Easy Mock](https://github.com/easy-mock/easy-mock/blob/dev/README.zh-CN.md)，导入 mock 数据，然后修改 `api/request.js` 中的 `BASE_URL`。
+
 ### 文档
 [点击查看](https://imageslr.github.io/weapp-library)
 
@@ -20,20 +24,6 @@
 在线借书平台小程序——我的——组件展示
 
 ![组件展示](./component.png)
-
-### 运行
-参考[文档-安装](https://imageslr.github.io/weapp-library/guide/install.html)
-
-注意：请**更新最新版开发工具**，在`project.config.json`中添加下列字段以**忽略无用文件**，否则会报错“代码包过大”。
-
-```JSON
-"packOptions": {
-  "ignore": [{
-      "type": "file",
-      "value": "./ui.png"
-  }]
-}
-```
 
 ### 文件结构
 
