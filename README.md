@@ -7,6 +7,9 @@
 
 > **欢迎关注本项目使用 Taro 重构后的版本**：[taro-library](https://github.com/imageslr/taro-library)，仅包含三个示例页面，非常简单。面向人群主要是 Taro/React/Redux 的初学者，目的是提供一个简单的实践项目，帮助理解 Taro 与 Redux 的配合方式与 Taro 的基本使用。本项目还提供了一个快速搭建本地 mock 服务的解决方案。
 
+### Mock 数据
+本项目目前仅提供小程序的开源代码，暂无对应后端服务。Mock 数据来自 [Easy Mock](https://www.easy-mock.com/mock/5aacc9a1d3f6bd35dfb4be65/)，API 文档使用 [Swagger](https://app.swaggerhub.com/apis/imageslr/weapp/1.0.1)。
+
 ### 文档
 [点击查看](https://imageslr.github.io/weapp-library)
 
