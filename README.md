@@ -81,4 +81,6 @@ EasyMock 现在不太稳定，所以我把 Mock 数据导出了一份，见 [moc
 遵循 [JavaScript Standard Style](https://standardjs.com/readme-zhcn.html)
 
 ### 声明
-Demo 仅作学习使用, 转载请注明出处
+Demo 仅作学习使用, 转载请注明出处。
+
+本作品获得第六届中国软件杯大赛全国一等奖、第一届微信小程序开发大赛华北赛区一等奖。
