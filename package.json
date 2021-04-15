@@ -1,5 +1,20 @@
 {
   "standard": {
-    "globals": [ "wx", "getApp", "Page", "App", "Component" ]
+    "globals": [
+      "wx",
+      "getApp",
+      "Page",
+      "App",
+      "Component"
+    ]
+  },
+  "devDependencies": {
+    "express": "^4.17.1",
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.5.0",
+    "json-server": "^0.16.3",
+    "mockjs": "^1.1.0",
+    "morgan": "^1.10.0",
+    "rd": "^2.0.1"
   }
 }

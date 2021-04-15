@@ -1,18 +1,29 @@
 ## 在线借书平台
 
-<img src="https://imageslr.github.io/weapp-library/assets/img/weapp_code.f16279a1.png" width=250 />
+<!-- <img src="https://imageslr.github.io/weapp-library/assets/img/weapp_code.f16279a1.png" width=250 /> -->
 
-**如果你觉得这个仓库有用，请点一个Star支持一下我，谢谢！**  
-**如果对哪部分代码有疑问或者需要我讲一下设计和开发的整体理念/部分细节，可以开一个Issue。欢迎大家与我交流。**
+**如果你觉得这个仓库有用，请点一个 Star 支持一下我，谢谢！**  
+**如果对哪部分代码有疑问或者需要我讲一下设计和开发的整体理念/部分细节，可以开一个 Issue。欢迎大家与我交流。**
 
 > **欢迎关注本项目使用 Taro 重构后的版本**：[taro-library](https://github.com/imageslr/taro-library)，仅包含三个示例页面，非常简单。面向人群主要是 Taro/React/Redux 的初学者，目的是提供一个简单的实践项目，帮助理解 Taro 与 Redux 的配合方式与 Taro 的基本使用。本项目还提供了一个快速搭建本地 mock 服务的解决方案。
 
-### Mock 数据
-本项目目前仅提供小程序的开源代码，暂无对应后端服务。Mock 数据来自 [Easy Mock](https://www.easy-mock.com/mock/5aacc9a1d3f6bd35dfb4be65/)，API 文档使用 [Swagger](https://app.swaggerhub.com/apis/imageslr/weapp/1.0.1)。
+### 运行 Mock Server
+本项目目前仅提供小程序的开源代码，暂无对应后端服务。需要自行在本地启动 Mock Server。
 
-EasyMock 的证书已经到期，因此需要在开发者工具-详情中勾选“不校验合法域名、web-view（业务域名）、TLS 版本以及 HTTPS 证书”。
+在项目目录下安装依赖：
+```
+npm install
+```
 
-EasyMock 现在不太稳定，所以我把 Mock 数据导出了一份，见 [mocks](./mocks) 文件夹。大家可以尝试本地部署 [Easy Mock](https://github.com/easy-mock/easy-mock/blob/dev/README.zh-CN.md)，导入 mock 数据，然后修改 `api/request.js` 中的 `BASE_URL`。
+启动 Mock Server：
+```
+gulp mock
+```
+
+默认启动端口是 3000，如有区别，请修改 `api/request.js` 中的 `BASE_URL` 常量。
+
+如果在 mac 启动时报错：“无法打开 fse.node：来自身份不明的开发者“，请前往“系统设置 - 安全性与隐私 - 通用 - 允许从以下位置下载的 App”，点击“仍然允许“，然后再次执行 `gulp mock`。这里可能会有两次错误，
+
 
 ### 文档
 [点击查看](https://imageslr.github.io/weapp-library)
@@ -54,7 +65,9 @@ EasyMock 现在不太稳定，所以我把 Mock 数据导出了一份，见 [moc
 ├── images                // 图标
 ├── package.json
 ├── pages                 // 页面，子页面在父页面的children文件夹中
-│ └─components            // 与业务相关的特殊组件
+│   └─components          // 与业务相关的特殊组件
+├── mock                  // Mock Server
+│   └── data              // Get/Post/Delete 等接口的 mockjs 模板文件
 ├── project.config.json
 ├── styles                // 样式
 ├── templates             // 模板

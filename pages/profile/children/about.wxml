@@ -13,7 +13,7 @@
     </view>
     <view class="weui-cell">
         <view class="weui-cell__bd">联系方式</view>
-        <view class="weui-cell__ft color-blue">xxx@163.com</view>
+        <view class="weui-cell__ft color-blue">imageslr.github.io</view>
     </view>
 </view>
 <view class="weui-msg__extra-area">

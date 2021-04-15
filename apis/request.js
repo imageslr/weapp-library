@@ -14,7 +14,7 @@ var Promise = require('../utils/es6-promise')
  * 服务器根路径
  */
 // 远程服务器
-export const BASE_URL = 'https://www.easy-mock.com/mock/5aacc9a1d3f6bd35dfb4be65/api/v1'
+export const BASE_URL = 'http://localhost:3000/api/v1'
 export const DOMAIN_NAME = '这里需要填写真实服务器地址，用来上传图片'
 // 本地服务器
 // export const BASE_URL = 'http://localhost:8080/library/public/index.php/api'
