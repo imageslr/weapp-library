@@ -87,5 +87,6 @@
         "selectedColor": "#09BB07"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

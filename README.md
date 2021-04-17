@@ -22,8 +22,9 @@ gulp mock
 
 默认启动端口是 3000，如有区别，请修改 `api/request.js` 中的 `BASE_URL` 常量。
 
-如果在 mac 启动时报错：“无法打开 fse.node：来自身份不明的开发者“，请前往“系统设置 - 安全性与隐私 - 通用 - 允许从以下位置下载的 App”，点击“仍然允许“，然后再次执行 `gulp mock`。这里可能会有两次错误，
+如果在 mac 启动时报错：“无法打开 fse.node：来自身份不明的开发者“，请前往“系统设置 - 安全性与隐私 - 通用 - 允许从以下位置下载的 App”，点击“仍然允许“，然后再次执行 `gulp mock`。这里可能会有两次错误。
 
+这个功能拆分到了单独的仓库里，请查看 [simplest-mock-server](https://github.com/imageslr/simplest-mock-server)，一个开箱即用的搭建本地 mock 接口的工具。
 
 ### 文档
 [点击查看](https://imageslr.github.io/weapp-library)
