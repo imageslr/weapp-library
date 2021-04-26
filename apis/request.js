@@ -3,8 +3,6 @@
  *
  * 本项目 API 文档：
  * -- https://app.swaggerhub.com/apis/imageslr/weapp/1.0.1
- * Mock 数据：
- * -- https://www.easy-mock.com/project/5aacc9a1d3f6bd35dfb4be65
  */
 
 import { getToken } from '../utils/permission'
@@ -13,12 +11,8 @@ var Promise = require('../utils/es6-promise')
 /**
  * 服务器根路径
  */
-// 远程服务器
 export const BASE_URL = 'http://localhost:3000/api/v1'
 export const DOMAIN_NAME = '这里需要填写真实服务器地址，用来上传图片'
-// 本地服务器
-// export const BASE_URL = 'http://localhost:8080/library/public/index.php/api'
-// export const DOMAIN_NAME = 'http://localhost:8080'
 
 /**
  * get 方法
