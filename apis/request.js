@@ -11,7 +11,7 @@ var Promise = require('../utils/es6-promise')
 /**
  * 服务器根路径
  */
-export const BASE_URL = 'http://localhost:3000/api/v1'
+export const BASE_URL = '/container-weapp/api/v1'
 export const DOMAIN_NAME = '这里需要填写真实服务器地址，用来上传图片'
 
 /**
@@ -77,8 +77,8 @@ export function request (method, relativeUrl, param, header) {
 
   let response, error
   return new Promise((resolve, reject) => {
-    wx.request({
-      url: BASE_URL + relativeUrl,
+    wx.cloud.callContainer({
+      path: BASE_URL + relativeUrl,
       method: method,
       header: Object.assign({
         'Content-Type': 'application/json',

@@ -23,6 +23,9 @@ App({
 
     // 初始化帮助信息
     initTipSettings()
+
+    // 初始化云托管
+    wx.cloud.init({ env: "library-2gil27gf378e8490" })
   },
 
   /**
