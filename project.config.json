@@ -16,12 +16,12 @@
 	"packOptions": {
 		"ignore": [
 			{
-				"type": "file",
-				"value": "./ui.png"
+				"type": "folder",
+				"value": "assets"
 			},
 			{
-				"type": "file",
-				"value": "./component.png"
+				"type": "folder",
+				"value": "simplest-mock-server"
 			}
 		]
 	},
