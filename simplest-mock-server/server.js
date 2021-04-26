@@ -1,13 +1,19 @@
 const express = require('express')
 const logger = require('morgan')
+const minimist = require('minimist')
 
-const port = 3000;
+const args = minimist(process.argv.slice(2), {
+  number: ["port"],
+  default: {port: 3000}
+})
+
+const port = args.port;
 const server = express()
 const router = require("./router.js")
 
-// 添加一个 750ms 的延迟，模拟真实场景
+// 添加延迟，模拟真实场景
 server.use((request, res, next) => {
-  setTimeout(next, 750); 
+  setTimeout(next, 500); 
 });
 
 server.use(logger('dev', {

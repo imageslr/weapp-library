@@ -1,41 +1,87 @@
 ## 在线借书平台
 
-<!-- <img src="https://imageslr.github.io/weapp-library/assets/img/weapp_code.f16279a1.png" width=250 /> -->
+<img src="https://imageslr.github.io/weapp-library/assets/img/weapp_code.f16279a1.png" width=250 />
 
 **如果你觉得这个仓库有用，请点一个 Star 支持一下我，谢谢！**  
 **如果对哪部分代码有疑问或者需要我讲一下设计和开发的整体理念/部分细节，可以开一个 Issue。欢迎大家与我交流。**
 
 > **欢迎关注本项目使用 Taro 重构后的版本**：[taro-library](https://github.com/imageslr/taro-library)，仅包含三个示例页面，非常简单。面向人群主要是 Taro/React/Redux 的初学者，目的是提供一个简单的实践项目，帮助理解 Taro 与 Redux 的配合方式与 Taro 的基本使用。本项目还提供了一个快速搭建本地 mock 服务的解决方案。
 
-### 运行 Mock Server
-本项目目前仅提供小程序的开源代码，暂无对应后端服务。需要自行在本地启动 Mock Server。
+### 运行本地 Mock Server
+本项目仅提供小程序的开源代码，暂无对应后端服务，需要自行在本地启动 Mock Server，方法如下：
 
-在项目目录下安装依赖：
 ```
+# 在项目根目录下执行
+cd simplest-mock-server
+
+# 安装依赖
 npm install
-```
 
-启动 Mock Server：
-```
+# 启动 mock 服务
 gulp mock
 ```
 
-默认启动端口是 3000，如有区别，请修改 `api/request.js` 中的 `BASE_URL` 常量。
+默认启动端口是 3000，如有区别，请修改 `api/request.js` 中的 `BASE_URL` 常量。关闭 `gulp mock` 终端进程，模拟网络中断场景；修改 [/simplest-mock-server/server.js](https://github.com/imageslr/weapp-library/tree/master/simplest-mock-server/server.js) 中的延迟时长，模拟 timeout 场景。
 
 如果在 mac 启动时报错：“无法打开 fse.node：来自身份不明的开发者“，请前往“系统设置 - 安全性与隐私 - 通用 - 允许从以下位置下载的 App”，点击“仍然允许“，然后再次执行 `gulp mock`。这里可能会有两次错误。
 
-这个功能拆分到了单独的仓库里，请查看 [simplest-mock-server](https://github.com/imageslr/simplest-mock-server)，一个开箱即用的搭建本地 mock 接口的工具。
+> 这个功能拆分到了单独的仓库里，请查看 [simplest-mock-server](https://github.com/imageslr/simplest-mock-server)，**一个开箱即用的搭建本地 mock 接口的工具**。
+
+### 搭建云托管 Mock Server
+
+本项目提供了一个可以在线预览的小程序版本，扫码即可上手体验。这需要部署线上的 mock 服务，过去主要使用 [easy-mock](https://github.com/easy-mock/easy-mock) 提供的在线平台，但现在这个项目已经不再维护，当然也有一些开发者提供的[个人服务器](https://github.com/easy-mock/easy-mock/issues/443)，不过还是存在服务不可用的风险。还有一种方式是自己购买一台服务器，然后在其中运行 mock 服务，但这种方法成本较高，且浪费资源。
+
+在这个项目中，我使用微信开放平台的云开发能力来部署 mock server，成本极低，十分方便。操作步骤主要参考了[云托管文档 - 使用指南](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/guide/container/guidance.html)，需要提前了解 Docker 与 Dockerfile 概念：
+
+1. 开通云托管功能（按量计费），新建一个服务，命名为 `weapp`：
+    <img src="assets/04-26-19-51-00.png" >
+
+2. 在 `/simplest-mock-server` 目录下创建 `Dockerfile` 文件，写入以下内容：
+
+    ```
+    # https://hub.docker.com/_/node
+    FROM node:10.10.0-slim
+
+    # Create and change to the app directory.
+    WORKDIR /usr/src/app
+
+    # Copy application dependency manifests to the container image.
+    # A wildcard is used to ensure both package.json AND package-lock.json are copied.
+    # Copying this separately prevents re-running npm install on every code change.
+    COPY package*.json ./
+
+    # Install production dependencies.
+    RUN npm install --only=production
+
+    RUN npm install -g gulp
+
+    # Copy local code to the container image.
+    COPY . ./
+
+    # Run the web service on container startup.
+    CMD [ "gulp", "mock" ]
+    ```
+
+3. 在第一步的服务中新建版本，上传 `/simplest-mock-server` 文件夹，监听端口设置为 `3000`：
+    
+    <img width="400px" src="assets/04-26-19-53-08.png">
+
+4. 小程序的 `onLaunch()` 中调用：`wx.cloud.init({ env: "环境id" })`
+
+5. 修改小程序中调用接口的代码 `api/request.js`：
+    
+    <img src="assets/04-26-20-59-19.png" >
 
 ### 文档
 [点击查看](https://imageslr.github.io/weapp-library)
 
 ### UI
-![ui](./ui.png)
+![ui](./assets/ui.png)
 
 ### 组件化
 在线借书平台小程序——我的——组件展示
 
-![组件展示](./component.png)
+![组件展示](./assets/component.png)
 
 ### 文件结构
 
