@@ -7,6 +7,8 @@
 
 > **欢迎关注本项目使用 Taro 重构后的版本**：[taro-library](https://github.com/imageslr/taro-library)，仅包含三个示例页面，非常简单。面向人群主要是 Taro/React/Redux 的初学者，目的是提供一个简单的实践项目，帮助理解 Taro 与 Redux 的配合方式与 Taro 的基本使用。本项目还提供了一个快速搭建本地 mock 服务的解决方案。
 
+<div id="mock-server"></div>
+
 ### 运行本地 Mock Server
 本项目仅提供小程序的开源代码，暂无对应后端服务，需要自行在本地启动 Mock Server，方法如下：
 
