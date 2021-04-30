@@ -66,8 +66,12 @@ routes.forEach((item) => {
     }
     res.jsonp(data);
   };
-  router[method](pathname, handler);
-  console.info(`[INFO] Add mock api, method: ${method} url: ${pathname}`);
+  try {
+    router[method](pathname, handler);
+    console.info(`[INFO] Add mock api, method: ${method} url: ${pathname}`);
+  } catch (e) {
+    console.error(`[Error] Add mock api failed, method: ${method} url: ${pathname} error: ${e}`);
+  }
 });
 
 // expose routes
