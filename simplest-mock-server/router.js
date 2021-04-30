@@ -33,9 +33,9 @@ filelist.forEach((absolutePath) => {
     const template = fs.readFileSync(absolutePath, "utf8");
 
     let relativePath = absolutePath
+      .replace(`${TEMPLATE_DIR}${path.sep}`, "")
       .split(path.sep) // for windows
       .join("/")
-      .replace(`${TEMPLATE_DIR}/`, "");
 
     const idx = relativePath.indexOf("/");
     if (idx == -1) throw new Error("resolve method name failed");
