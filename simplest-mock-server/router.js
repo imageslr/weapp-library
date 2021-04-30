@@ -1,5 +1,5 @@
 const fs = require("fs");
-const path = require("path")
+const path = require("path");
 const Mock = require("mockjs");
 const express = require("express");
 const rd = require("rd");
@@ -31,15 +31,26 @@ filelist.forEach((absolutePath) => {
   console.info(`[INFO] Reading mock template file: ${absolutePath}`);
   try {
     const template = fs.readFileSync(absolutePath, "utf8");
-    let name = absolutePath.replace(`${TEMPLATE_DIR}/`, "");
-    const idx = name.indexOf("/");
-    const method = name.slice(0, idx).toLowerCase();
-    name = name.slice(idx);
-    const path = name.replace(".json", "").replace(/{/g, ":").replace(/}/g, "");
+
+    let relativePath = absolutePath
+      .split(path.sep) // for windows
+      .join("/")
+      .replace(`${TEMPLATE_DIR}/`, "");
+
+    const idx = relativePath.indexOf("/");
+    if (idx == -1) throw new Error("resolve method name failed");
+    const method = relativePath.slice(0, idx).toLowerCase();
+
+    const pathname = relativePath
+      .slice(idx)
+      .replace(".json", "")
+      .replace(/{/g, ":")
+      .replace(/}/g, "");
     const fn = new Function(`return ${template}`);
+
     routes.push({
       method,
-      pathname: path,
+      pathname,
       template: fn(),
     });
   } catch (err) {
@@ -70,7 +81,9 @@ routes.forEach((item) => {
     router[method](pathname, handler);
     console.info(`[INFO] Add mock api, method: ${method} url: ${pathname}`);
   } catch (e) {
-    console.error(`[Error] Add mock api failed, method: ${method} url: ${pathname} error: ${e}`);
+    console.error(
+      `[Error] Add mock api failed, method: ${method} url: ${pathname} error: ${e}`
+    );
   }
 });
 
