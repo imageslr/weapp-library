@@ -101,6 +101,10 @@ Page({
   onSubmit: function () {
     if (this._validate() !== true) return
 
+    wx.showToast({title: '修改成功', mask: true})
+
+    return
+
     // 先上传身份证照片，获取图片url，再上传用户信息
     this._uploadIdCardImgs().then(this._updateUserInfo).then(res => {
       wx.showToast({title: '修改成功', mask: true})
