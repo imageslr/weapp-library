@@ -22,6 +22,10 @@
 			{
 				"type": "folder",
 				"value": "simplest-mock-server"
+			},
+			{
+				"type": "folder",
+				"value": "docs"
 			}
 		]
 	},

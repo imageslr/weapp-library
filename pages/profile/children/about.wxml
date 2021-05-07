@@ -13,7 +13,7 @@
     </view>
     <view class="weui-cell">
         <view class="weui-cell__bd">联系方式</view>
-        <view class="weui-cell__ft color-blue">imageslr.github.io</view>
+        <view class="weui-cell__ft color-blue">https://imageslr.com</view>
     </view>
 </view>
 <view class="weui-msg__extra-area">
@@ -21,6 +21,6 @@
         <view class="weui-footer__links">
             <view class="weui-footer__link" url="">GitHub @imageslr</view>
         </view>
-        <view class="weui-footer__text">Copyright © 2017-2018 Imageslr</view>
+        <view class="weui-footer__text">Copyright © 2017-2021 Imageslr</view>
     </view>
 </view>
