@@ -71,7 +71,7 @@
   </view>
 </view>
 <view class="font-gray-28 weui-cells__tips">
-  请确保你的信息真实有效，我们会保护好你的个人信息，不会对外提供
+  本项目仅作演示，请勿输入真实信息，点击提交后不会上传至系统。
 </view>
 <view class="weui-btn-area">
   <button class="weui-btn" type="primary" catchtap="onSubmit">提交</button>
