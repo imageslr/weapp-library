@@ -9,6 +9,8 @@
 ### 扫码体验
 <img src="https://imageslr.github.io/weapp-library/assets/img/weapp_code.f16279a1.png" width=250 />
 
+> 首次使用时 (例如: 获取验证码)，可能会有错误弹窗。多尝试几次即可。
+
 <div id="mock-server"></div>
 
 ### 运行本地 Mock Server
