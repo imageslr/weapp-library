@@ -19,7 +19,7 @@ Page({
   onLoad: function (options) {
     wx.showModal({
       title: '说明',
-      content: "本项目是一个开源项目，数据均为随机生成，仅供演示使用。",
+      content: "随便输入一个手机号和验证码",
       showCancel: false
     })
     needReturn = options.need_return
