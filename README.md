@@ -6,7 +6,7 @@
 > **欢迎关注本项目使用 Taro 重构后的版本**：[taro-library](https://github.com/imageslr/taro-library)，仅包含三个示例页面，非常简单。面向人群主要是 Taro/React/Redux 的初学者，目的是提供一个简单的实践项目，帮助理解 Taro 与 Redux 的配合方式与 Taro 的基本使用。本项目还提供了一个快速搭建本地 mock 服务的解决方案。
 
 
-### 扫码体验
+### 扫码体验 (最近云服务器到期，不可用，请在本地开发者工具运行)
 <img src="https://imageslr.github.io/weapp-library/assets/img/weapp_code.f16279a1.png" width=250 />
 
 > 首次使用时 (例如: 获取验证码)，可能会有错误弹窗。多尝试几次即可。
